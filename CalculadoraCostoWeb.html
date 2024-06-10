@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Costo de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #0056b3;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+            font-weight: bold;
+        }
+        input, select, button {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003f7f;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e6f2ff;
+        }
+        .remove {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <form id="product-form">
+        <label for="product-select">Producto:</label>
+        <select id="product-select" required>
+            <!-- Lista de productos -->
+        </select>
+        <label for="product-quantity">Cantidad:</label>
+        <input type="number" id="product-quantity" min="1" value="1" required>
+        <button type="submit">Agregar al Carrito</button>
+    </form>
+    <table id="cart">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Peso Total (kg)</th>
+                <th>Precio Original</th>
+                <th>IVA</th>
+                <th>Precio Final</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <h2>Total Preliminar: <span id="preliminary-total">$0.00</span></h2>
+    <label for="destination">Destino del Envío:</label>
+    <select id="destination">
+        <option value="new_york">Nueva York</option>
+        <option value="los_angeles">Los Ángeles</option>
+        <option value="chicago">Chicago</option>
+        <option value="houston">Houston</option>
+        <option value="miami">Miami</option>
+        <option value="san_francisco">San Francisco</option>
+    </select>
+    <button onclick="calcularCosto()">Calcular Costo</button>
+    <h2>Desglose Final</h2>
+    <p id="final-breakdown"></p>
+    <script src="CalculadoraCostos_proyecto1.js"></script>
+</body>
+</html>
